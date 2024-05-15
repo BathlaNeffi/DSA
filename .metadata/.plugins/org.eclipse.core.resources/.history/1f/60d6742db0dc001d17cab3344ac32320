@@ -1,0 +1,51 @@
+package Calc;
+
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class LearnGUI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*JFrame frame=new JFrame();// creating the frame
+		frame.setTitle("Fame Title goes here TicTakToe");/// sets the title of the window
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// this will set the window to close on closing the x
+		frame.setSize(420, 420);// setting up the size
+		frame.setResizable(false);// prevent frame from being resized
+		frame.setVisible(true);// setting the voisibility
+
+
+		ImageIcon image=new ImageIcon("logo2.png");// create an ImageIcon
+
+		frame.setIconImage(image.getImage());// chnage the frame icon image
+//		frame.getContentPane().setBackground(Color.CYAN);
+//		frame.getContentPane().setBackground(new Color(123,50,250));
+		frame.getContentPane().setBackground(new Color(0xFF00FF));
+
+		 */
+		JLabel label=new JLabel();
+		label.setText("Bro do you even code");
+
+
+		//		MyFrame myframe=new MyFrame();
+		//		myframe.add(label);
+		ImageIcon image=new ImageIcon("logo2.png");
+		label.setIcon(image);
+
+		JFrame frame=new JFrame();// creating the frame
+		frame.setTitle("Fame Title goes here TicTakToe");/// sets the title of the window
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// this will set the window to close on closing the x
+		frame.setSize(420, 420);// setting up the size
+		frame.setResizable(false);// prevent frame from being resized
+		frame.setVisible(true);// setting the voisibility
+		
+		frame.add(label);
+
+		// Jlabel = a GUI display area for a string or a text , image or both
+
+	}
+
+}

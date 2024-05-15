@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MirrorImagePatter.java&apos; to &apos;fundamentals/src/fundamentals&apos;&#x0D;&#x0A;- Original project: &apos;fundamentals&apos;&#x0D;&#x0A;- Destination element: &apos;fundamentals/src/fundamentals&apos;&#x0D;&#x0A;- Original element: &apos;fundamentals.MirrorImagePatter.java&apos;" description="Copy compilation unit" destination="/src&lt;fundamentals" element1="/src&lt;fundamentals{MirrorImagePatter.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1672240696214" units="1" version="1.0"/>
+</session>

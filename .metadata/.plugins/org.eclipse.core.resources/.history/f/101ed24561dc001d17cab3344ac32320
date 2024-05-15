@@ -1,0 +1,22 @@
+package otHello;
+
+public class othHello {
+	private Player player1,player2;
+	private Board board;
+	private static int numCount;
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		othHello o=new othHello();
+		o.startGame();
+
+	}
+	
+	private void startGame() {
+		
+		
+	}
+
+}

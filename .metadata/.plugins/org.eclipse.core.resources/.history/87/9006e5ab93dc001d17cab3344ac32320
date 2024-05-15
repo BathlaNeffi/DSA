@@ -1,0 +1,27 @@
+package Calc;
+
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+
+public class LearnGUI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frame=new JFrame();// creating the frame
+		frame.setTitle("Fame Title goes here TicTakToe");/// sets the title of the window
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// this will set the window to close on closing the x
+		frame.setSize(420, 420);// setting up the size
+		frame.setResizable(false);// prevent frame from being resized
+		frame.setVisible(true);// setting the voisibility
+		
+		
+		ImageIcon image=new ImageIcon("logo2.png");// create an ImageIcon
+
+		frame.setIconImage(image.getImage());// chnage the frame icon image
+		frame.getContentPane().setBackground(Color.GREEN);;
+
+	}
+
+}

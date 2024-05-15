@@ -1,0 +1,119 @@
+package DP;
+
+public class WaysToMakeCoinChange {
+	
+	
+	public static int countWaysToMakeChangeI(int denominations[], int value){
+		
+		int n=denominations.length;
+		int dp[][]=new int[n+1][value+1];
+		
+		for(int i=n-1;i>=0;i--) {
+			for(int v=0;v<=value;v++) {
+				int ans1=dp[i][value-v];
+				int ans2=dp[i+1][value];
+				dp[i][v]=ans1+ans2;
+			}
+		}
+		return  dp[0][value];
+	}
+	
+	public static int countWaysToMakeChangeDp(int denominations[], int value,int i,int [][]dp){
+        // Write your code here
+		
+		if(i>=denominations.length|| value<0) {
+			return 0;
+		}
+		if(value==0) {
+			return 1;
+		}
+		
+		
+		
+		
+
+		
+		int count;
+		
+		
+			int ans1,ans2;
+			
+			if(dp[i][value-denominations[i]]==Integer.MIN_VALUE) {
+				ans1=countWaysToMakeChange(denominations, value-denominations[i],i);
+				dp[i][value]=ans1;
+			}
+			else {
+				ans1=dp[i][value];
+			}
+			
+			if(dp[i+1][value]==Integer.MIN_VALUE)
+			{
+			ans2=countWaysToMakeChange(denominations, value, i+1);
+			dp[i+1][value]=ans2;
+			}
+			else {
+				ans2=dp[i+1][value];
+			}
+			count=ans1+ans2;
+			
+		
+		
+		return count;
+	}
+
+	
+	
+	
+	
+	
+	public static int countWaysToMakeChange(int denominations[], int value,int i){
+        // Write your code here
+		
+		if(i>=denominations.length|| value<0) {
+			return 0;
+		}
+		if(value==0) {
+			return 1;
+		}
+		
+		
+		
+
+		
+		int count;
+		
+		
+			int ans1=countWaysToMakeChange(denominations, value-denominations[i],i);
+			int ans2= countWaysToMakeChange(denominations, value, i+1);
+			count=ans1+ans2;
+			
+		
+		
+		return count;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int arr[]= {1,2,3,4,5,6};
+		
+		int value=300;
+		
+		int dp[][]=new int[arr.length+1][value+1];
+		
+		for(int i=0;i<dp.length;i++) {
+			for(int j=0;j<dp[0].length;j++) {
+				dp[i][j]=Integer.MIN_VALUE;
+			}
+		}
+		
+		System.out.println(countWaysToMakeChangeI(arr, value));
+		
+		
+		
+		
+		
+
+	}
+
+}

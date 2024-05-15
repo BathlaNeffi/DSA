@@ -1,0 +1,27 @@
+package FullTest1;
+
+public class CheckSubset {
+	
+	
+	public static boolean CheckSubset(int[] arr1, int n1, int[] arr2, int n2) {
+		/*Your class should be named solution. 
+		*Don't write main().
+		*Don't take input, it is passed as function argument.
+		*Don't print output.
+		*Taking input and printing output is handled automatically.
+		*/ 
+		
+		
+		
+        return false;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr1[]= {3,6,5,8,15,1,14,18,7,9,14,9,3,12,8};
+		int arr2[]= {18,6,9,8};
+		
+		System.out.println(CheckSubset(arr1, arr1.length, arr2, arr2.length));
+	}
+
+}

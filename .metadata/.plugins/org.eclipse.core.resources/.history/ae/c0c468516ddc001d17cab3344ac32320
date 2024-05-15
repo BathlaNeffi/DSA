@@ -1,0 +1,66 @@
+package otHello;
+
+public class Board {
+	private  static int board[][];
+	private  static final int BOARDSIZE=8;
+	final static int player1Symbol = 1;
+	final static int player2Symbol = 2;
+	public Board() {
+		board = new int[BOARDSIZE][BOARDSIZE];
+		board[3][3] = player1Symbol;
+		board[3][4] = player2Symbol;
+		board[4][3] = player2Symbol;
+		board[4][4] = player1Symbol;
+	}
+
+	public void print() {
+		for(int i = 0; i < 8; i++) {
+			for(int j = 0; j < 8; j++) {
+				System.out.print(board[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static  boolean move(int symbol, int x, int y) {
+		if(x<0|| y<0|| x>=BOARDSIZE||y>=BOARDSIZE||board[x][y]!=0) {
+			return false;
+		}
+		int [] x_Dir= {-1,-1,0,+1,+1,+1,0,-1};
+		int [] y_Dir= {0,+1,+1,+1,0,-1,-1,-1};
+		int c=0;
+
+		for(int i=0;i<x_Dir.length;i++) {
+			int X=x+x_Dir[i];
+			int Y=y+y_Dir[i];
+			int count=0;
+			boolean valid=true;
+			while(X>=0 && Y>=0 && X<BOARDSIZE && Y<BOARDSIZE && board[X][Y]!=0 && board[X][Y]!=symbol ) {
+				count++;
+				X += x_Dir[i];
+				Y += y_Dir[i];
+			}
+			if(count==0) {
+				valid=false;
+			}
+			if(valid && board[X][Y]==symbol) {
+				board[x][y]=symbol;
+
+				X = x + x_Dir[i];
+				Y = y + y_Dir[i];
+				while(X>=0 && Y>=0 && X<8 && Y<8 &&  board[X][Y]!=0 &&  board[X][Y]!=symbol) {
+					board[X][Y] = symbol;
+					X += x_Dir[i];
+					Y += y_Dir[i];
+					
+				}
+				c++;
+			}
+
+		}
+		if(c==0) {
+            return false;
+        }
+        return true;
+	}
+}

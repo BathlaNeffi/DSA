@@ -1,0 +1,68 @@
+package FullTest1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Test3 {
+	
+	
+	
+	
+	public static ArrayList<Integer> primeNumber(int n) {
+		
+		if(n==1) {
+			
+			return null;
+		}
+		
+		ArrayList<Integer> al;
+		int i=2;
+		for(;i<n;i++) {
+			if(n%i==0) {
+				break;
+			}
+		}
+		if(i==n) {
+			al=new ArrayList<>();
+			al.add(n);
+//			System.out.print(n+" ");
+		
+		}
+		return primeNumber(n-1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner s=new Scanner(System.in);
+		
+		int n=s.nextInt();
+		
+		ArrayList<Integer> al=new ArrayList<>();
+		
+		al=primeNumber(n);
+		
+		if(!al.isEmpty()) {
+			for(int i: al) {
+				System.out.print(i+" ");
+			}
+		}
+		
+		
+
+	}
+
+}

@@ -1,0 +1,63 @@
+package Recursion3;
+
+public class ReturnPermutationsString {
+	
+	
+	public static String[] helper(String input,int si) {
+		if(si==input.length()) {
+			String []temp=new String[1];
+			temp[0]="";
+			return temp;
+		}
+		
+		
+		String[] Output=new String[0];
+		for( int i=0; i<input.length();i++) {
+			char curr=input.charAt(i);
+			
+			String [] smallOutput=helper(input.substring(0, i)+input.substring(i+1, input.length()),si+1);
+			String [] newOutput=Output;
+			newOutput=new String[Output.length+smallOutput.length];
+			
+			for(int j=0; j<Output.length;j++) {
+				newOutput[j]=Output[j];
+			}
+			for(int j=0; j<smallOutput.length;j++) {
+				newOutput[Output.length+j]= curr+smallOutput[j];
+			}
+			
+		}
+		return Output;
+		
+		
+		
+		
+		
+		
+	}
+	public static String[] permutationOfString(String input){
+		// Write your code here
+		return helper(input,0);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String st="adf";
+		
+//		String [] print=permutationOfString(st);
+//		
+//		for(String i: print) {
+//			System.out.println(i);
+//		}
+		
+		String test=st.substring(1,1);
+		System.out.println(test);
+		
+		
+
+	}
+
+}

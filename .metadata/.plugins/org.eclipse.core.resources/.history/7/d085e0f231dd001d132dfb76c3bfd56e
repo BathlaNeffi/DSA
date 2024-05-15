@@ -1,0 +1,30 @@
+package FullTest1;
+
+import java.util.Scanner;
+
+public class BackSpace {
+	
+	
+	public static String backspace(String s){
+		
+		String sol="";
+		for(int i=0;i<s.length();i++) {
+			if(s.charAt(i)!='#') {
+				sol+=s.charAt(i);
+			}
+			else {
+				sol=sol.substring(0,i-1);
+			}
+		}
+		return sol;
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner (System.in);
+		String str=s.next();
+		System.out.println(backspace(str));
+
+	}
+
+}

@@ -1,0 +1,72 @@
+package hashMAP;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class LongestConsecutiveSequence {
+	
+	public static ArrayList<Integer> longestConsecutiveIncreasingSequence(int[] arr) {
+		
+		HashMap<Integer, Boolean> map=new HashMap<>();
+		for(int i=0;i<arr.length;i++) {
+			map.put(arr[i],true);
+		}
+		
+		int maxLength=0;
+		int start=0;
+		int end=0;
+		
+		for(int i=0; i<arr.length && map.get(arr[i]);i++){
+			
+			int startTemp=arr[i];
+			int endTemp=arr[i];
+			int maxLengthTemp=0;
+			int j=arr[i];
+			
+			while(map.containsKey(j+1)) {
+				map.put(j+1, false);
+				maxLengthTemp++;
+				endTemp=(j+1);
+				j++;
+				
+			}
+			j=arr[i];
+			
+			while(map.containsKey(j-1)){
+				map.put(j-1, false);
+				maxLengthTemp++;
+				endTemp=(j-1);
+				j--;
+//				if(j<0) {break;}
+					
+			}
+			
+			if(maxLengthTemp>maxLength) {
+				start=startTemp;
+				end=endTemp;
+			}
+			
+			
+		}
+		
+		
+		ArrayList<Integer> output=new ArrayList<>();
+		output.add(end);
+		output.add(start);
+		
+		return output;
+		
+		
+		
+		
+		
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr[]= {2,12,9,16,10,5,3,20,25,11,1,8,6};
+		System.out.println(longestConsecutiveIncreasingSequence(arr));
+
+	}
+
+}

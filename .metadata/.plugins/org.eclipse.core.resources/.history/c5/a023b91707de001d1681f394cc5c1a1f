@@ -1,0 +1,10 @@
+package FullTest2;
+
+public class DeathGame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

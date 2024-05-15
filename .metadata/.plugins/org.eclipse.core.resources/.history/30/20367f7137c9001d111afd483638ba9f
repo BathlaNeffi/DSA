@@ -1,0 +1,45 @@
+package Recursion3;
+
+public class ReturnPermutationsString {
+	
+	
+	public static String[] helper(String input,int si) {
+		if(input.length()==0) {
+			String []temp=new String[1];
+			temp[0]=" ";
+			return temp;
+		}
+		
+		char c=input.charAt(si);
+		String[] smallOutput=helper(input.substring(0, si)+input.substring(si+1,input.length()), si+1);
+		String [] output=new String[smallOutput.length*input.length()];
+		for(int i=0; i<smallOutput.length;i++) {
+			output[i]=smallOutput[i]+c;
+		}
+		
+		return output;
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	public static String[] permutationOfString(String input){
+		// Write your code here
+		return helper(input,0);
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String st="adf";
+		System.out.println(permutationOfString(st));
+
+	}
+
+}

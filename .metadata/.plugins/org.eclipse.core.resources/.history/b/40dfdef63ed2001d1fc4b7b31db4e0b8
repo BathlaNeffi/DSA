@@ -1,0 +1,47 @@
+package DP;
+
+public class WaysToMakeCoinChange {
+	
+	public static int countWaysToMakeChange(int denominations[], int value,int i){
+        // Write your code here
+		
+		if(i>=denominations.length) {
+			return 0;
+		}
+		if(value==0) {
+			return 1;
+		}
+		if(value<0) {
+			return 0;
+		}
+		
+		int count;
+		
+		
+			int ans1=countWaysToMakeChange(denominations, value-denominations[i],i);
+//			int ans3=countWaysToMakeChange(denominations, value-denominations[i], i+1);
+			int ans2= countWaysToMakeChange(denominations, value, i+1);
+			count=ans1+ans2;
+			
+		
+		
+		return count;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int arr[]= {1,2,3};
+		
+		int value=4;
+		
+		System.out.println(countWaysToMakeChange(arr, value, 0));
+		
+		
+		
+		
+		
+
+	}
+
+}
